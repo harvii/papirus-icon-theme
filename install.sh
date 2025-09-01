@@ -24,7 +24,7 @@ cat <<- EOF
 
 EOF
 
-: "${DESTDIR:=/usr/share/icons}"
+: "${DESTDIR:=$HOME/.local/share/icons}"
 : "${EXTRA_THEMES=Papirus-Dark Papirus-Light}"
 : "${TAG:=master}"
 : "${uninstall:=false}"
@@ -50,7 +50,7 @@ _sudo() {
 _download() {
     _msg "Getting the latest version from GitHub ..."
     wget -O "$temp_file" \
-        "https://github.com/PapirusDevelopmentTeam/$gh_repo/archive/$TAG.tar.gz"
+        "https://github.com/harvii/$gh_repo/archive/$TAG.tar.gz"
     _msg "Unpacking archive ..."
     tar -xzf "$temp_file" -C "$temp_dir"
 }
